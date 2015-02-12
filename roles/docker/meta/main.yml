@@ -1,0 +1,14 @@
+---
+galaxy_info:
+  author: Julien Fusco
+  description: Install Docker
+  company: Ochelys
+  min_ansible_version: 1.8
+  platforms:
+    - name: Ubuntu
+      versions:
+        - trusty
+  categories:
+    - system
+dependencies:
+  - python

@@ -1,0 +1,13 @@
+---
+- name: start a Docker container to provide MySQL
+  docker:
+    image: mysql
+    name: mysql
+    ports: "127.0.0.1:{{ mysql_port }}:{{ mysql_port }}"
+    env: "MYSQL_ROOT_PASSWORD={{ mysql_root_password }}"
+
+- name: add a Python interface to MySQL
+  apt: pkg=python-mysqldb state=present
+
+- name: add a MySQL database client
+  apt: pkg=mysql-client state=present

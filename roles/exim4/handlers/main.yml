@@ -1,0 +1,7 @@
+---
+- name: update Exim4 conf
+  command: update-exim4.conf
+  notify: "restart Exim4"
+
+- name: restart Exim4
+  service: name=exim4 state=restarted

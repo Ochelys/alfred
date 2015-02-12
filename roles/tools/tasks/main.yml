@@ -1,0 +1,33 @@
+---
+- name: set system's hostname
+  hostname: name={{ alfred_hostname }}
+
+- name: install some tools
+  apt: pkg={{ item }} state=present
+  with_items:
+    - ntpdate
+    - ntp
+    - htop
+    - tmux
+    - logwatch
+    - vim
+    - apticron
+    - backup-manager
+
+- name: create the Logwatch cache directory
+  file: path="/var/cache/logwatch" state=directory
+
+- name: edit the Apticron configuration file
+  template: src=../templates/apticron.conf.j2 dest=/etc/apticron/apticron.conf
+
+- name: edit the Logwatch configuration file
+  template: src=../templates/logwatch.conf.j2 dest=/etc/logwatch/conf/logwatch.conf
+
+- name: edit the Backup-manager configuration file
+  template: src=../templates/backup-manager.conf.j2 dest=/etc/backup-manager.conf
+
+- name: be sure Backup-manager runs at 2
+  cron: name="Backup data" minute="0" hour="2" job="/usr/sbin/backup-manager  | mail -s '[backup] {{ ansible_hostname }}' {{ backup_email_to }}"
+
+- name: be sure Ntp is running and enabled
+  service: name=ntp state=started enabled=true

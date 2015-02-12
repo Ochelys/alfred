@@ -1,0 +1,9 @@
+---
+apticron_email_to: technique@alfred.dev
+apticron_email_from: root@alfred.dev
+logwatch_email_to: technique@alfred.dev
+logwatch_email_from: root@alfred.dev
+alfred_hostname: alfred.dev
+alfred_hostname_local: alfred
+backup_dir: /var/archives
+backup_email_to: technique@alfred.dev

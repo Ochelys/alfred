@@ -1,0 +1,12 @@
+---
+- name: install Nginx
+  apt: pkg=nginx state=present
+
+- name: be sure Nginx is running and enabled
+  service: name=nginx state=started enabled=true
+
+- name: remove the default site
+  file: path="{{ nginx_site_enabled_dir }}/default" state=absent
+
+- name: create the SSL Certificate directory
+  file: path="{{ nginx_ssl_dir }}" state=directory

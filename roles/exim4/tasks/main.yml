@@ -1,0 +1,17 @@
+---
+- name: install Exim4
+  apt: pkg=exim4-daemon-light state=present
+
+- name: install Mailutils
+  apt: pkg=mailutils state=present
+
+- name: edit Exim4 configuration
+  template: src=../templates/update-exim4.conf.conf.j2 dest=/etc/exim4/update-exim4.conf.conf
+  notify: "update Exim4 conf"
+
+- name: edit Mailname
+  template: src=../templates/mailname.j2 dest=/etc/mailname
+  notify: "update Exim4 conf"
+
+- name: be sure EXIM4 is running and enabled
+  service: name=exim4 state=started enabled=true
