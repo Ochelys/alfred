@@ -13,6 +13,7 @@
     - vim
     - apticron
     - backup-manager
+    - fail2ban
 
 - name: create the Logwatch cache directory
   file: path="/var/cache/logwatch" state=directory
@@ -26,8 +27,15 @@
 - name: edit the Backup-manager configuration file
   template: src=../templates/backup-manager.conf.j2 dest=/etc/backup-manager.conf
 
+- name: edit the Fail2ban configuration file
+  template: src=../templates/jail.conf.j2 dest=/etc/fail2ban/jail.conf
+  notify: "restart Fail2ban"
+
 - name: be sure Backup-manager runs at 2
   cron: name="Backup data" minute="0" hour="2" job="/usr/sbin/backup-manager  | mail -s '[backup] {{ ansible_hostname }}' {{ backup_email_to }}"
 
 - name: be sure Ntp is running and enabled
   service: name=ntp state=started enabled=true
+
+- name: be sure Fail2ban is running and enabled
+  service: name=fail2ban state=started enabled=true

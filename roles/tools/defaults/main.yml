@@ -7,3 +7,4 @@ alfred_hostname: alfred.dev
 alfred_hostname_local: alfred
 backup_dir: /var/archives
 backup_email_to: technique@alfred.dev
+fail2ban_email_to: technique@alfred.dev
