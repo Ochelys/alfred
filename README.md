@@ -65,7 +65,7 @@ alfred_hostname_local=alfred
 backup_dir=/backups/alfred
 backup_email_to=alertes-technique@ma-super-entreprise.com
 fail2ban_email_to=alertes-technique@ma-super-entreprise.com
-smtp_domain: ma-super-entreprise.com
+smtp_domain=ma-super-entreprise.com
 ```
 
 ### Provisonnement du serveur
