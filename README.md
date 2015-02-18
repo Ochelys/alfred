@@ -7,6 +7,37 @@
 Alfred est un des serveurs d'applications d'[Ochelys](http://www.ochelys.com/).  
 Il nous met à disposition quelques outils sympas encapsulés dans des conteneurs. Merci [Docker](https://www.docker.com/) ♥
 
+## Applications
+
+Alfred est un mec sympa et te met à disposition les applications ci-dessous.
+
+_Si tu veux ajouter ton application préférée, tu peux créer une issue ou, encore mieux, nous faire une PR._
+
+* Docker
+* [Redmine](https://registry.hub.docker.com/u/sameersbn/redmine/)
+* [Exim](http://www.exim.org/)
+
+### Base de données
+
+* [MySQL](https://registry.hub.docker.com/_/mysql/)
+
+### Serveur HTTP
+
+* [Nginx](http://nginx.org/)
+
+### Outils
+
+* Htop
+* Tmux
+* Vim
+* Backup-manager
+
+### Supervision & Sécurité
+
+* Logwatch
+* Apticron
+* Fail2ban
+
 ## Pré-requis
 
 * [Ansible](http://docs.ansible.com/) (>= 1.8)
