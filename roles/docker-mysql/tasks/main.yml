@@ -1,9 +1,13 @@
 ---
+- name: create the data store
+  file: path="{{ mysql_data_store_dir }}" state=directory
+
 - name: start a Docker container to provide MySQL
   docker:
     image: mysql
     name: mysql
     ports: "127.0.0.1:{{ mysql_port }}:{{ mysql_port }}"
+    volumes: "{{ mysql_data_store_dir }}:/var/lib/mysql"
     env: "MYSQL_ROOT_PASSWORD={{ mysql_root_password }}"
 
 - name: add a Python interface to MySQL

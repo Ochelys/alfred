@@ -3,3 +3,4 @@ mysql_host: 127.0.0.1
 mysql_port: 3306
 mysql_root_user: root
 mysql_root_password: root
+mysql_data_store_dir: /home/apps/mysql/data
