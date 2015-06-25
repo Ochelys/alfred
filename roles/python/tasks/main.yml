@@ -2,5 +2,11 @@
 - name: install Python
   apt: pkg=python state=present
 
-- name: install Python-pip
-  apt: pkg=python-pip state=present
+- name: be sure Python-pip is not installed
+  apt: pkg=python-pip state=absent
+
+- name: install Python-virtualenv
+  apt: pkg=python-virtualenv state=present
+
+- name: install pip
+  easy_install: name=pip
