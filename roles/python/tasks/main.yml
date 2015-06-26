@@ -6,7 +6,7 @@
   apt: pkg=python-pip state=absent
 
 - name: install Python-virtualenv
-  apt: pkg=python-virtualenv state=present
+  apt: pkg=python-virtualenv state=present update_cache=yes
 
 - name: install pip
   easy_install: name=pip
