@@ -12,4 +12,4 @@
   service: name=docker state=started enabled=true
 
 - name: add the Python client for Docker
-  pip: name=docker-py
+  pip: name=docker-py version=1.1.0
