@@ -14,7 +14,6 @@ Alfred est un mec sympa et te met à disposition les applications ci-dessous.
 _Si tu veux ajouter ton application préférée, tu peux créer une issue ou, encore mieux, nous faire une PR._
 
 * Docker
-* [Redmine](https://registry.hub.docker.com/u/sameersbn/redmine/)
 * [Exim](http://www.exim.org/)
 
 ### Base de données
@@ -57,17 +56,6 @@ Dans le cas où tu voudrais un Alfred (rien qu'à toi) en local, on a tout prév
 $ vagrant up
 ```
 
-### Accès aux applications
-
-Tout d'abord, tu dois configurer quelques noms de domaines dans ton résolveur préféré : Dnsmasq, Bind… ou encore dans ton `/etc/hosts`.
-
-```
-127.0.0.1  redmine.alfred.dev
-```
-
-Voilà, tu n'as plus qu'à jouer avec ton serveur tout beau tout neuf !  
-Par exemple, tu peux accéder à Redmine  : https://redmine.alfred.dev:10443/
-
 ## Sur un serveur de production
 
 Tu veux tout ça sur ton serveur de production mais tu ne sais pas comment faire ?  
@@ -75,7 +63,7 @@ Très simple. Un fichier de configuration, une ligne de commande et on en parle 
 
 ### Configuration
 
-Ce fichier de configuration va te servir à surcharger les variables par défaut du playbook. Si tu veux que ton Redmine soit accessible via l'adresse https://redmine.example.com, c'est possible.
+Ce fichier de configuration va te servir à surcharger les variables par défaut du playbook.
 
 Tu peux nommer ce fichier `hosts.prod`, par exemple, et le sauvegarder dans ton petit endroit secret.
 
@@ -84,8 +72,6 @@ Tu peux nommer ce fichier `hosts.prod`, par exemple, et le sauvegarder dans ton 
 alfred.ma-super-entreprise.com
 
 [alfred:vars]
-redmine_database_password=change-me
-redmine_server_name=redmine.ma-super-entreprise.com
 mysql_root_password=change-me
 apticron_email_to=alertes-technique@ma-super-entreprise.com
 apticron_email_from=root@alfred.ma-super-entreprise.com

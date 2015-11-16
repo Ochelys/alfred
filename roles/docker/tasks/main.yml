@@ -1,15 +1,15 @@
 ---
 - name: add the Docker repository key
-  apt_key: url="https://get.docker.io/gpg" id="A88D21E9"
+  apt_key: keyserver=p80.pool.sks-keyservers.net id=58118E89F3A912897C070ADBF76221572C52609D
 
 - name: add the Docker repository to the apt sources list
-  apt_repository: repo="deb http://get.docker.io/ubuntu docker main" update_cache=yes
+  apt_repository: repo="deb https://apt.dockerproject.org/repo ubuntu-trusty main" update_cache=yes
 
 - name: install Docker
-  apt: pkg=lxc-docker state=present
+  apt: pkg=docker-engine state=present
 
 - name: be sure Docker is running and enabled
   service: name=docker state=started enabled=true
 
 - name: add the Python client for Docker
-  pip: name=docker-py version=1.1.0
+  pip: name=docker-py
