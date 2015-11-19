@@ -12,7 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "forwarded_port", guest: 443, host: 10443
 
   config.vm.provision 'ansible' do |ansible|
-    ansible.playbook = 'site.yml'
+    ansible.playbook = 'playbook.yml'
     ansible.sudo = true
   end
 
