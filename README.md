@@ -91,7 +91,7 @@ Tu peux commencer à créer manuellement, sur ton serveur, un utilisateur sudoer
 Alors, certes, je te vois venir. Ce n'est pas obligatoire et tu vas me dire que tu peux utiliser le compte `root`. Oui, mais non. Pour une question de sécurité, il est préférable de [désactiver la connexion au compte root via SSH](http://www.howtogeek.com/howto/linux/security-tip-disable-root-ssh-login-on-linux/).
 
 ```sh
-$ ansible-playbook --inventory-file=/path/to/hosts.prod --user=chucknorris --sudo --ask-sudo-pass site.yml
+$ ansible-playbook --inventory-file=/path/to/hosts.prod --user=chucknorris --sudo --ask-sudo-pass playbook.yml
 ```
 
 ## Contribution & Remerciements
