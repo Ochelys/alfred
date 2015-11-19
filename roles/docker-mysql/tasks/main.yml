@@ -4,7 +4,7 @@
 
 - name: start a Docker container to provide MySQL
   docker:
-    image: mysql
+    image: mysql:5.6
     name: mysql
     ports: "127.0.0.1:{{ mysql_port }}:{{ mysql_port }}"
     volumes: "{{ mysql_data_store_dir }}:/var/lib/mysql"
