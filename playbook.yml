@@ -4,3 +4,4 @@
     - tools
     - exim4
     - docker-mysql
+    - nginx
