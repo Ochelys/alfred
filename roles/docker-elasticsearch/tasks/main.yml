@@ -1,0 +1,9 @@
+---
+- name: create the data store
+  file: path="{{ elasticsearch_data_store_dir }}" state=directory
+
+- name: start a Docker container to provide Elasticsearch
+  docker:
+    image: elasticsearch
+    name: elasticsearch
+    volumes: "{{ elasticsearch_data_store_dir }}:/usr/share/elasticsearch/data"
