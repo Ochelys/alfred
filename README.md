@@ -20,6 +20,10 @@ _Si tu veux ajouter ton application préférée, tu peux créer une issue ou, en
 
 * [MySQL](https://registry.hub.docker.com/_/mysql/)
 
+### Moteur de recherche
+
+* [Elasticsearch](https://hub.docker.com/_/elasticsearch/)
+
 ### Serveur HTTP
 
 * [Nginx](http://nginx.org/)
