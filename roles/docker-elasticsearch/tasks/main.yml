@@ -6,4 +6,5 @@
   docker:
     image: elasticsearch
     name: elasticsearch
+    command: elasticsearch -Des.index.max_result_window=2147483647
     volumes: "{{ elasticsearch_data_store_dir }}:/usr/share/elasticsearch/data"
