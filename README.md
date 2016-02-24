@@ -37,6 +37,7 @@ _Si tu veux ajouter ton application préférée, tu peux créer une issue ou, en
 
 ### Supervision & Sécurité
 
+* Landscape-common
 * Logwatch
 * Apticron
 * Fail2ban

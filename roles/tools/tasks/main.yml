@@ -14,6 +14,7 @@
     - apticron
     - backup-manager
     - fail2ban
+    - landscape-common
 
 - name: create the Logwatch cache directory
   file: path="/var/cache/logwatch" state=directory
